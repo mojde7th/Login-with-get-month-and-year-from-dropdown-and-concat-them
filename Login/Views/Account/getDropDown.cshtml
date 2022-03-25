@@ -1,0 +1,53 @@
+﻿@model Login.Models.Yearmonth
+@{
+    ViewBag.Title = "getDropDown";
+}
+
+<h2>getDropDown</h2>
+
+<!--<h2>test</h2>
+<form>
+    <table>
+        <tr>
+            <td>
+                
+
+            </td>
+        </tr>-->
+        @*<input href="@Url.Action("submit","Account")" type="submit" value="Submit" />*@
+<!--</form>-->
+@*<tr>
+        <td>
+            @if (ViewBag.yearlist != null)
+            {
+                @Html.DropDownListFor(model => model.id, ViewBag.monthlist as SelectList, "--انتخاب ماه", new { @class = "form-control" })
+            }
+
+        </td>
+    </tr>*@
+
+
+<!--</table>-->
+
+<div class="clear-loading spinner">
+    <span></span>
+</div>
+<div class="w3ls-login box box--big">
+    <!-- form starts here -->
+    <form action="submit" method="post">
+        <div class="agile-field-txt">
+            @*<input type="text" name="yearname" placeholder="نام کاربری" required="" />*@
+            @if (ViewBag.monthlist != null)
+            {
+@Html.DropDownListFor(model => model.selmonthId, ViewBag.monthlist as SelectList, "--انتخاب ماه", new { @class = "form-control" })            }
+
+            @if (ViewBag.monthlist != null)
+            {
+@Html.DropDownListFor(model => model.selyearId, ViewBag.yearlist as SelectList, "--انتخاب سال", new { @class = "form-control" })            }
+        </div>
+
+        <input type="submit" value="sub">
+    </form>
+    <a href="@Url.Action("but","Account")">ماه و سال</a>
+
+</div>

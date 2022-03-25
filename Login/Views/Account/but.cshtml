@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Login.Employee>
+@{ ViewBag.Title = "but";
+    Layout = "~/Views/_LayoutPage3.cshtml"; }
+<center style="padding:10px;margin:10px">
+    <h2>دانلود اطلاعات</h2>
+    <hr />
+    <a href="@Url.Action("getDropDown","Account")">ماه و سال</a>
+
+    @*@{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+        @wbgrid.GetHtml(
+            tableStyle: "table table-striped",
+            htmlAttributes: new { @id = "wbgrid" },
+            columns: wbgrid.Columns(wbgrid.Column("Reg", "Reg"),
+           wbgrid.Column("CompanyCodee", "CompanyCode")
+           ))*@
+
+
+
+    @{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+    @wbgrid.GetHtml(
+                    tableStyle: "table table-striped",
+                    htmlAttributes: new { @id = "wbgrid" },
+                    columns: wbgrid.Columns(wbgrid.Column("Reg", "Reg"),
+                   wbgrid.Column("CompanyCodee", "CompanyCode")
+                   ))
+<center>
+
+
+  

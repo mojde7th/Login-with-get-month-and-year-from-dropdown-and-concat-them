@@ -1,0 +1,36 @@
+﻿
+@model IEnumerable<Login.Employee>
+@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+
+<h2>search</h2>
+<center style="padding:20px">
+
+    @{ WebGrid wbgrid = new WebGrid(source: Model, rowsPerPage: 5); }
+
+    @wbgrid.GetHtml(
+        tableStyle: "table table-striped",
+        htmlAttributes: new { @id = "wbgrid" },
+        columns: wbgrid.Columns(wbgrid.Column("Reg", "Reg"),
+       wbgrid.Column("CompanyCodee", "CompanyCode"),
+       wbgrid.Column("PayrollCodee", "Payrollcode"),
+       wbgrid.Column("Statement", "Statement"),
+       wbgrid.Column("Personel", "Personel")
+       ))
+
+
+    <a href="@Url.Action("ExporttoExcel","Account")">دانلود اکسل حقوق</a>
+
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="dl-horizontal">
+        </dl>
+    </div>
+    <p>
+
+        @Html.ActionLink("برگشت به جستجو", "login")
+    </p>
+    </center>

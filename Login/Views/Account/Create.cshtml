@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/_LayoutPage3.cshtml";
+}
+<center>
+    <h3>شما وارد شدید</h3>
+
+    <div class="jumbotron">
+        <h4>نمایش جدول اطلاعات حقوق </h4>
+
+        <input type="button" class="btn btn-primary btn-lg" value="نمایش جدول" onclick="location.href='@Url.Action("but", "Account")'" />
+    </div>
+</center>
+<script>function but() {
+        $.get("/Home/but", function (data) {
+            $("p").html(data);
+        });
+    }</script>
+
+
